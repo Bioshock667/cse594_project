@@ -36,6 +36,7 @@ MStatus initializePlugin(MObject obj) {
 	MGlobal::executeCommand("menu -label \"AnimSmooth\" -parent MayaWindow -tearOff 1 TestMenu;");
 	MGlobal::executeCommand(MString("menuItem -label \"Say Hello\" -echoCommand true -command \"python(\\\"execfile(\\\\\\\"" +
 		plugin.loadPath() + "/menu.py" + "\\\\\\\")\\\")\" TestMenuItem1;"));
+	//following menu item executes python("execfile(\"C:/Users/jaffa/Documents/GitHub/cse594_project/animSmooth/x64/Debug/menu.py\")") when clicked
    status = plugin.registerCommand("helloWorld", animSmooth::creator);
    return status;
 
